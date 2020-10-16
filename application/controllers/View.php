@@ -123,7 +123,53 @@ class View extends CI_Controller {
 		</script>");	
 		redirect('view/jabatan_data');
 	}
-
+	//-------------------------------------------------------------
+	function ras_data()
+	{		
+		$data['r'] = $this->M_master->data_ras();	
+		$data['title'] = 'Data Ras Hewan';		
+		$data['isi'] = 'contents/ras_data';
+		$this->load->view('wrapper', $data);
+	}	
+	function ras_input()
+	{		
+		$this->M_master->tambah_ras();
+		$this->session->set_flashdata('msg', "<script>		
+		$(document).ready(function () {
+			Toast.fire({
+			icon: 'success',
+			title: 'Data Ras Hewan berhasil masuk.'	
+		  })
+		});
+		</script>");
+		redirect('view/ras_data');
+	}
+	function ras_edit()
+	{		
+		$this->M_master->edit_ras();
+		$this->session->set_flashdata('msg', "<script>		
+		$(document).ready(function () {
+			Toast.fire({
+			icon: 'success',
+			title: 'Data Ras Hewan berhasil diubah.'	
+		  })
+		});
+		</script>");	
+		redirect('view/ras_data');
+	}
+	function ras_hapus()
+	{		
+		$this->M_master->hapus_ras();
+		$this->session->set_flashdata('msg', "<script>		
+		$(document).ready(function () {
+			Toast.fire({
+			icon: 'success',
+			title: 'Data Ras Hewan berhasil dihapus.'	
+		  })
+		});
+		</script>");	
+		redirect('view/ras_data');
+	}
 
 
 

@@ -6,8 +6,6 @@
   <title>MyPOS Klinik Hewan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 <!-- jQuery -->
 <script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -149,7 +147,7 @@
                 </a>
 			  </li>
               <li class="nav-item">
-                <a href="<?php echo site_url('view/rasHewan_data') ?>" class="nav-link">
+                <a href="<?php echo site_url('view/ras_data') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>RAS Hewan</p>
                 </a>

@@ -50,8 +50,6 @@ class M_master extends CI_Model {
 	}
 	//--======================================== END TEMPLATE ========================================================
 
-
-	
 	function data_jabatan() {        
 		$sql = $this->db->get("masterjabatans");
         return $sql->result();
@@ -73,17 +71,31 @@ class M_master extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('masterjabatans');
 	}
+	//------------------------------------------------------------
 
-
-
-	function data_hewan() {        
-		$sql = $this->db->get("masterhewans");
-        return $sql->result();
-	}
-	function data_rashewan() {        
+	function data_ras() {        
 		$sql = $this->db->get("masterrashewans");
         return $sql->result();
 	}
+	function tambah_ras() {
+		$data = array ('namarashewan'	 =>$this->input->post('ras-nama')
+					);
+		$this->db->insert('masterrashewans',$data);
+	}
+	function edit_ras() {
+		$id 	= $this->input->post('eras-id');
+		$data = array ('namarashewan'=>$this->input->post('eras-nama')
+	);
+		$this->db->where('id', $id);
+		$this->db->update('masterrashewans', $data);
+	}	
+	function hapus_ras(){
+		$id 	= $this->input->post('dras-id');
+		$this->db->where('id', $id);
+		$this->db->delete('masterrashewans');
+	}
+
+
 	function data_sosmed() {        
 		$sql = $this->db->get("mastersosmeds");
         return $sql->result();
